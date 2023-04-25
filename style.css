@@ -1,0 +1,128 @@
+* {
+  border-radius: 0;
+  font-family: "Hack Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands" ;
+  font-size: 12pt;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(40, 40, 40, 0.85);
+  color: #DADAE8;
+}
+
+tooltip {
+  background: #282828;
+  border-radius: 1px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #1e1e1e;
+}
+
+#workspaces {
+  padding: 0px 6px;
+  border-radius: 1px;
+}
+
+#workspaces button {
+  padding: 0px 6px;
+  color: #EBDBB2;
+}
+
+#workspaces button.focused {
+  color: #A89984;
+}
+
+#workspaces button.active {
+  color: #A89984;
+}
+
+#workspaces button.urgent {
+  color: #928374;
+}
+
+#workspaces button:hover {
+  color: #EBDBB2;
+}
+
+#clock, #cpu, #memory, #disk, #network, #bluetooth, #custom-date, #battery, #battery#bat1, #custom-wifi, #tray, #custom-power, #window, #pulseaudio, #workspaces, #backlight, #temperature, #custom-color{
+  padding: 0px 6px;
+}
+
+#network {
+    color: #D79921
+}
+
+#memory {
+    color: #D3869B
+}
+
+#backlight {
+    color: #FABD2F
+}
+
+#disk {
+    color: #EBDBB2
+}
+
+#network.disconnected {
+    background-color: #fb4934;
+    color: #1d2021;
+}
+
+#pulseaudio { color: #8EC07C; }
+#pulseaudio.muted {
+  background-color: #fb4934;
+  color: #fbf1c7;
+}
+#temperature { color: #83A598; }
+#temperature.critical {
+  background-color: #fb4934;
+  color: #CC241D;
+}
+#battery {
+  color: #B8BB26;
+}
+
+#battery.charging, #battery.plugged {
+  background-color: #b8bb26;
+  color: #1d2021;
+}
+
+@keyframes blink {
+    to {
+        background-color: #1d2021;
+        color: #fb4934;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #fb4934;
+    color: #1d2021;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+  color: #83A598;
+  border-radius: 0px 0px 0px 0px;
+}
+
+#custom-power {
+  color: #96cdfb;
+  border-radius: 0px 0px 0px 0px;
+}
+
+#window {
+  color: #fbf1c7;
+  border-radius: 0px 0px 0px 0px;
+}
+
+
+
+#custom-date {
+  color: #EBDBB2;
+  border-radius: 0px 15px 15px 0px;
+}
