@@ -6,15 +6,15 @@
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
 	"modules-center": [],
-    "modules-right": ["custom/color","temperature","cpu","memory","disk","network","bluetooth","battery","battery#bat1","backlight","pulseaudio","tray","clock"],
+    "modules-right": ["custom/updates","temperature","cpu","memory","disk","custom/lang","network","battery","battery#bat1","backlight","pulseaudio","tray","clock"],
     // Modules configuration
      "wlr/workspaces": {
         "persistent_workspaces": {
-        "1": [], 
-        "2": [], 
-        "3": [], 
+        "1": [],
+        "2": [],
+        "3": [],
         "4": [],
-        "5": [], 
+        "5": [],
         "6": [],
         "7": [],
         "8": [],
@@ -64,7 +64,7 @@
         "tooltip": true
 	},
 
-	"sway/language": {
+	"language": {
         "format": "{short} ⌨️"
     },
 
@@ -135,7 +135,7 @@
         "states": {
             "good": 80,
             "warning": 60,
-            "critical": 30
+            "critical": 29
         },
         "format": "{icon}{capacity}% {power}W",
         "format-charging": "🔋🔌⚡{capacity}%",
@@ -223,6 +223,14 @@
 		"format": "🌙{}",
 		"return-type": "json",
 	},
+    "custom/updates": {
+        "exec": "~/.config/waybar/arch-updates.sh",
+        "format": "♻️{}",
+    },
+    "custom/lang": {
+        "exec": "~/.config/waybar/keyboardlayout.sh",
+        "format": "{}",
+    },
   "custom/husky": {
       "on-click": "wofi --show drun --allow-images -b -o | xargs swaymsg exec --",
       "format": "   ||",
