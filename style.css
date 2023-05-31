@@ -47,7 +47,7 @@ tooltip {
   color: #EBDBB2;
 }
 
-#clock, #cpu, #memory, #disk, #network, #bluetooth, #custom-date, #battery, #battery#bat1, #custom-wifi, #tray, #custom-power, #window, #pulseaudio, #workspaces, #backlight, #temperature, #custom-color, #custom-updates, #custom-lang{
+#clock, #cpu, #memory, #disk, #network, #bluetooth, #custom-date, #battery, #battery#bat1, #custom-wifi, #tray, #custom-power, #window, #pulseaudio, #workspaces, #backlight, #temperature, #custom-color, #custom-updates, #custom-lang, #custom-gpu-usage{
   padding: 0px 6px;
 }
 
@@ -58,7 +58,9 @@ tooltip {
 #custom-updates {
     color: #b8bb26
 }
-
+#custom-gpu-usage {
+    color: #EBDBB2;
+}
 #custom-lang {
     color: #EBDBB2
 }

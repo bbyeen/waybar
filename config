@@ -4,9 +4,9 @@
   // "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1920, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["image#husky","wlr/workspaces"],
 	"modules-center": [],
-    "modules-right": ["custom/updates","temperature","cpu","memory","disk","custom/lang","network","battery","battery#bat1","backlight","pulseaudio","tray","clock"],
+    "modules-right": ["custom/color","custom/updates","temperature","cpu","memory","disk","custom/gpu-usage","custom/lang","network","battery","battery#bat1","backlight","pulseaudio","tray","clock"],
     // Modules configuration
      "wlr/workspaces": {
         "persistent_workspaces": {
@@ -93,7 +93,7 @@
         "format": "💡{percent}%",
     },
 	"cpu": {
-        "format": "⚙️{usage}%",
+        "format": "⚙️{usage}% 📊{avg_frequency}GHz",
         "tooltip": true
     },
     "memory": {
@@ -162,12 +162,11 @@
 
 
     "network": {
-        "on-click": "nm-connection-editor",
-        "format-wifi": "📶{signalStrength}%",
-        "formatethernet": "📡{ifname}: {ipaddr}/{cidr}",
-        "format-linked": "📡{ifname} (No IP)📶",
+        "format-wifi": "📶{signaldBm} 📊{frequency} 🔺{bandwidthUpBits} 🔻{bandwidthDownBits}",
+        "format-ethernet": "📡 🔺{bandwidthUpBits} 🔻{bandwidthDownBits}",
+        "format-linked": "📡(No IP)📶 🔺{bandwidthUpBits} 🔻{bandwidthDownBits}",
         "format-disconnected": "🌐Not connected",
-        "tooltip-format": "📡{essid} {signalStrength}%"
+        "tooltip-format": "{ifname} {essid} {ipaddr} 📶{signalStrength}%"
     },
     "bluetooth": {
     	"on-click": "blueberry",
@@ -227,13 +226,17 @@
         "exec": "~/.config/waybar/arch-updates.sh",
         "format": "♻️{}",
     },
+    "custom/gpu-usage": {
+  "exec": "cat /sys/class/hwmon/hwmon*/device/gpu_busy_percent",
+  "format": "🖼️ {}%",
+  "return-type": "",
+  "interval": 5
+},
     "custom/lang": {
         "exec": "~/.config/waybar/keyboardlayout.sh",
         "format": "{}",
     },
-  "custom/husky": {
-      "on-click": "wofi --show drun --allow-images -b -o | xargs swaymsg exec --",
-      "format": "   ||",
-      "tooltip": false,
+  "image#husky": {
+      "path": "/home/kubaws/abt.png",
       },
 }-
