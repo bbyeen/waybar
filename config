@@ -162,7 +162,7 @@
 
 
     "network": {
-        "format-wifi": "📶{signaldBm} 📊{frequency} 🔺{bandwidthUpBits} 🔻{bandwidthDownBits}",
+        "format-wifi": "📶{signaldBm}dBm 📊{frequency}MHz 🔺{bandwidthUpBits} 🔻{bandwidthDownBits}",
         "format-ethernet": "📡 🔺{bandwidthUpBits} 🔻{bandwidthDownBits}",
         "format-linked": "📡(No IP)📶 🔺{bandwidthUpBits} 🔻{bandwidthDownBits}",
         "format-disconnected": "🌐Not connected",
